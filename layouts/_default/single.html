@@ -1,0 +1,25 @@
+{{ define "main" }}
+<article class="prose prose-invert max-w-none">
+    <h1 class="text-4xl font-bold mb-2 text-blue-400">{{ .Title }}</h1>
+    <p class="text-slate-400 text-sm mb-8">
+        {{ if .Params.date }}
+        Pubblicato il {{ .Date.Format "2 gennaio 2006" }}
+        {{ end }}
+    </p>
+
+    <div class="prose prose-invert">
+        {{ .Content }}
+    </div>
+
+    {{ if .Params.tags }}
+    <div class="mt-8 pt-8 border-t border-slate-700">
+        <p class="text-slate-400">Tag:</p>
+        <div class="flex flex-wrap gap-2 mt-2">
+            {{ range .Params.tags }}
+            <span class="px-3 py-1 bg-slate-700 rounded text-sm hover:bg-slate-600">{{ . }}</span>
+            {{ end }}
+        </div>
+    </div>
+    {{ end }}
+</article>
+{{ end }}

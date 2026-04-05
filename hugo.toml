@@ -1,0 +1,61 @@
+baseURL = "https://aamatu.github.io/"
+languageCode = "it-it"
+title = "Dr. Aamatu - Oncologo Clinico"
+author = "Dr. Aamatu"
+defaultContentLanguage = "it"
+
+# Theme configuration (custom theme)
+
+# Output formats
+[outputs]
+  home = ["HTML", "JSON"]
+
+# Menu navigation
+[[menu.main]]
+  name = "Home"
+  url = "/"
+  weight = 10
+
+[[menu.main]]
+  name = "Chi sono"
+  url = "/about/"
+  weight = 20
+
+[[menu.main]]
+  name = "Studi & Pubblicazioni"
+  url = "/studi/"
+  weight = 30
+
+[[menu.main]]
+  name = "Contatti"
+  url = "/contact/"
+  weight = 40
+
+# Params for SEO and site configuration
+[params]
+  description = "Portfolio professionale di Dr. Aamatu, Oncologo Clinico specializzato in clinical trials e studi di fase 1"
+  keywords = ["oncologia", "clinical trials", "studi fase 1", "tumore retto"]
+  author = "Dr. Aamatu"
+
+  # Social media
+  [[params.socialLinks]]
+    icon = "email"
+    url = "mailto:your-email@example.com"
+
+  # Color scheme and appearance
+  colorScheme = "dark"
+  defaultAppearance = "dark"
+
+  # Search
+  enableSearch = true
+  enableCodeCopy = true
+  showReadingTime = true
+
+# Content management
+[permalinks]
+  posts = "/blog/:slug/"
+  studi = "/studi/:slug/"
+
+[taxonomies]
+  category = "categories"
+  tag = "tags"
