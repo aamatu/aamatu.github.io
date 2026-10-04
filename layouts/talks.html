@@ -1,0 +1,33 @@
+{{ define "main" }}
+{{ partial "page-head.html" . }}
+
+    <section class="section">
+      <div class="shell">
+        {{/* Groups and entries come from data/<lang>/talks.yaml */}}
+        <ul class="timeline">
+        {{ range index hugo.Data .Site.Language.Lang "talks" }}
+        <li>
+          <div class="timeline-year">
+            <h2 class="year-badge">{{ .heading }}</h2>
+            <span class="rule-flex" aria-hidden="true"></span>
+          </div>
+          <ul class="talk-list" style="list-style:none;margin:0;padding:0">
+            {{ range .items }}
+            <li class="talk">
+              <p class="talk-when">{{ .when }}</p>
+              <div>
+                <h3 class="talk-title">{{ .title }}</h3>
+                <p class="talk-event">{{ .event }}</p>
+                <p class="talk-place">{{ .place }}</p>
+                <p class="talk-kind">{{ .kind }}</p>
+              </div>
+            </li>
+            {{ end }}
+          </ul>
+        </li>
+        {{ end }}
+        </ul>
+        {{ with .Params.note }}<p class="small muted" style="margin-top:2rem;max-width:64ch">{{ . }}</p>{{ end }}
+      </div>
+    </section>
+{{ end }}

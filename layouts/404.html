@@ -1,0 +1,54 @@
+{{/* GitHub Pages serves this one file for every missing address on the site,
+     including those under /it/. It therefore has to speak both languages —
+     a visitor who mistyped an Italian URL should not land on English only. */}}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page not found — {{ .Site.Title }}</title>
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="{{ "assets/favicon.svg" | relURL }}" type="image/svg+xml">
+  <meta name="theme-color" content="#FCFBF9" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#191816" media="(prefers-color-scheme: dark)">
+  {{ $style := .Site.Params.style | default "classic" }}
+  {{ $css := resources.Get (printf "css/%s.css" $style) }}
+  {{ if hugo.IsProduction }}{{ $css = $css | minify | fingerprint }}{{ end }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+</head>
+<body>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="{{ "/" | relURL }}">
+        <span class="brand-mono" aria-hidden="true">AA</span>
+        <span class="brand-name">{{ .Site.Params.author }}</span>
+      </a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-head">
+      <div class="shell">
+        <p class="eyebrow">Error 404</p>
+        <h1 class="page-title">Page not found</h1>
+        <p class="page-sub">The address you followed does not exist, or the page has moved.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <p class="lede">Start again from the <a href="{{ "/" | relURL }}">home page</a>, or go straight to
+          <a href="{{ "/publications/" | relURL }}">publications</a>,
+          <a href="{{ "/projects/" | relURL }}">trials and projects</a> or
+          <a href="{{ "/contact/" | relURL }}">contact</a>.</p>
+
+        <p class="lede muted" lang="it" style="margin-top:2rem">Questa pagina non esiste o è stata spostata.
+          Riparti dalla <a href="{{ "/it/" | relURL }}">pagina iniziale</a>, oppure vai a
+          <a href="{{ "/it/publications/" | relURL }}">pubblicazioni</a>,
+          <a href="{{ "/it/projects/" | relURL }}">studi e progetti</a> o
+          <a href="{{ "/it/contact/" | relURL }}">contatti</a>.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,111 @@
+{{ define "main" }}
+{{ partial "page-head.html" . }}
+
+    <!-- Bibliometrics: data/metrics.json is the single source of truth ---- -->
+    {{ $m := hugo.Data.metrics }}
+    <section class="section section--tight">
+      <div class="shell">
+        <ul class="metrics-band">
+          <li class="metric">
+            <p class="metric-value">{{ $m.papers }}</p>
+            <p class="metric-label">{{ i18n "metric_docs" }}</p>
+          </li>
+          <li class="metric">
+            <p class="metric-value">{{ lang.FormatNumber 0 $m.citations }}</p>
+            <p class="metric-label">{{ i18n "metric_cites" }}</p>
+          </li>
+          <li class="metric">
+            <p class="metric-value">{{ $m.h_index }}</p>
+            <p class="metric-label">{{ i18n "metric_h" }}</p>
+          </li>
+        </ul>
+        <p class="metrics-source">{{ replace .Params.metrics_note "{updated}" (time.Format "January 2006" $m.updated) }}</p>
+        <p class="profile-actions">
+          <a class="btn btn--ghost" href="https://www.scopus.com/authid/detail.uri?authorId={{ .Site.Params.scopusId }}" rel="noopener" target="_blank">{{ partial "icon-external.html" }}<span>{{ i18n "pub_scopusBtn" }}</span></a>
+          <a class="btn btn--ghost" href="https://orcid.org/{{ .Site.Params.orcid }}" rel="noopener" target="_blank">{{ partial "icon-external.html" }}<span>{{ i18n "pub_orcidBtn" }}</span></a>
+        </p>
+      </div>
+    </section>
+
+    <!-- Selected publications: data/<lang>/selected.yaml ------------------- -->
+    <section class="section section--tint section--ruled">
+      <div class="shell">
+        <p class="eyebrow">{{ .Params.selected.eyebrow }}</p>
+        <h2>{{ .Params.selected.title }}</h2>
+        <p class="lede">{{ .Params.selected.intro }}</p>
+        <ol class="pub-list pub-list--selected">
+          {{ range $i, $p := index hugo.Data .Site.Language.Lang "selected" }}
+          <li class="pub-entry">
+            <p class="pub-index" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</p>
+            <div>
+              <p class="pub-citation">
+                <span class="pub-title">{{ $p.title }}</span>
+                <span class="pub-authors">{{ $p.authors }}</span>
+                <cite class="pub-journal">{{ $p.journal }}</cite> <span class="pub-ref">{{ $p.ref }}</span>
+              </p>
+              {{ with $p.note }}<p class="pub-note">{{ . }}</p>{{ end }}
+              <ul class="pub-badges" aria-label="{{ i18n "pub_badges_label" }}">
+            <li><span class="badge badge--year">{{ $p.year }}</span></li>
+                {{ with $p.author_badge }}<li><span class="badge badge--author">{{ i18n (printf "badge_%s" .) }}</span></li>{{ end }}
+              </ul>
+              {{ if or $p.doi $p.pubmed }}
+              <p class="pub-links">{{ with $p.doi }}<a href="https://doi.org/{{ . }}" rel="noopener" target="_blank">{{ i18n "pub_link_doi" }}</a>{{ end }}{{ with $p.pubmed }}<a href="https://pubmed.ncbi.nlm.nih.gov/{{ . }}/" rel="noopener" target="_blank">{{ i18n "pub_link_pubmed" }}</a>{{ end }}</p>
+              {{ end }}
+            </div>
+          </li>
+          {{ end }}
+        </ol>
+      </div>
+    </section>
+
+    <!-- Full record, generated from OpenAlex: data/publications.json -->
+    {{ $docs := hugo.Data.publications }}
+    {{ $years := slice }}
+    {{ range $docs }}{{ if not (in $years .year) }}{{ $years = $years | append .year }}{{ end }}{{ end }}
+    {{ $years = sort $years "value" "desc" }}
+    <section class="section">
+      <div class="shell">
+        <p class="eyebrow">{{ .Params.full.eyebrow }}</p>
+        <h2>{{ .Params.full.title }}</h2>
+        <p class="lede">{{ replace .Params.full.intro "{papers}" (printf "%v" $m.papers) }}</p>
+        <nav class="year-nav" aria-label="{{ i18n "pub_yearNav" }}">
+          <ul>
+          {{ range $years }}<li><a href="#y{{ . }}">{{ . }}</a></li>
+          {{ end }}
+          </ul>
+        </nav>
+        {{ $n := 0 }}
+        {{ range $year := $years }}
+        {{ $rows := where $docs "year" $year }}
+        <section class="year-group" id="y{{ $year }}">
+          <div class="year-head">
+            <h3 class="year-badge">{{ $year }}</h3>
+            <span class="rule-flex" aria-hidden="true"></span>
+            <span class="year-count">{{ if eq (len $rows) 1 }}{{ i18n "pub_entries_one" }}{{ else }}{{ printf (i18n "pub_entries_many") (len $rows) }}{{ end }}</span>
+          </div>
+          <ol class="pub-list">
+            {{ range $rows }}
+            {{ $n = add $n 1 }}
+            <li class="pub-entry">
+              <p class="pub-index" aria-hidden="true">{{ $n }}</p>
+              <div>
+                <p class="pub-citation">
+                  <span class="pub-title">{{ .title }}</span>
+                  <span class="pub-authors">{{ .authors }}</span>
+                  <cite class="pub-journal">{{ .journal }}</cite>{{ with .ref }} <span class="pub-ref">{{ . }}</span>{{ end }}
+                </p>
+                <ul class="pub-badges" aria-label="{{ i18n "pub_badges_label" }}">
+              <li><span class="badge badge--type">{{ i18n (printf "doctype_%s" (lower (replaceRE "\\W+" "" .type))) }}</span></li>
+                  {{ if .open_access }}<li><span class="badge badge--oa">{{ i18n "badge_oa" }}</span></li>{{ end }}
+                  {{ if .first_author }}<li><span class="badge badge--author">{{ i18n "badge_first" }}</span></li>{{ end }}
+  <li><span class="pub-cites"><span class="cite-n">{{ .citations }}</span> <span>{{ if eq .citations 1 }}{{ i18n "pub_citation" }}{{ else }}{{ i18n "pub_citations" }}{{ end }}</span></span></li>
+                </ul>
+              </div>
+            </li>
+            {{ end }}
+          </ol>
+        </section>
+        {{ end }}
+      </div>
+    </section>
+{{ end }}

@@ -1,0 +1,13 @@
+{{ define "main" }}
+{{ partial "page-head.html" . }}
+
+    {{/* Layout generico per le pagine di sola prosa: il corpo Markdown viene
+         reso dentro un contenitore che ne imposta titoli, elenchi e misura. */}}
+    <section class="section section--tight">
+      <div class="shell">
+        <div class="page-prose">
+          {{ .Content }}
+        </div>
+      </div>
+    </section>
+{{ end }}

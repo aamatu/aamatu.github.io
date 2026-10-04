@@ -1,0 +1,81 @@
+# =============================================================================
+#  Alessio Amatu — personal site
+#
+#  Day-to-day editing happens in three places, nothing else:
+#     content/   the pages and their prose (Markdown)
+#     data/      the structured lists: publications, talks, CV
+#     hugo.toml  this file — site-wide switches
+#
+#  Preview locally with:   hugo server
+#  Publishing is automatic on every push to main (see .github/workflows/).
+#
+#  TOML NOTE: everything below a [table] header belongs to that table. All the
+#  site-wide switches therefore come FIRST, before the first [section]. Adding a
+#  global option at the bottom of the file silently makes it a parameter of
+#  whatever table it lands in, and Hugo ignores it without complaining.
+# =============================================================================
+
+baseURL = "https://aamatu.github.io/"
+title = "Alessio Amatu, MD"
+
+# English is served from the root (/), Italian from /it/.
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+enableRobotsTXT = true
+enableEmoji = false
+disableKinds = ["taxonomy", "term"]
+disableHugoGeneratorInject = true
+
+# Real "last modified" dates in sitemap.xml, taken from each file's git history.
+# Needs the full clone that the deploy workflow already performs.
+enableGitInfo = true
+
+# ---- Languages --------------------------------------------------------------
+[languages]
+  [languages.en]
+    label  = "English"
+    locale = "en-GB"
+    weight = 1
+  [languages.it]
+    label  = "Italiano"
+    locale = "it-IT"
+    weight = 2
+
+# ---- Site-wide parameters ---------------------------------------------------
+[params]
+  # -------------------------------------------------------------------------
+  #  THE STYLE SWITCH.  Two complete stylesheets ship with the site:
+  #     "classic"  the original design, ported unchanged (the light version)
+  #     "modern"   the editorial restyle: self-hosted fonts (the dark version)
+  #
+  #  The published site has a light/dark switch in the header: light is
+  #  "classic", dark is "modern". The word below is the default before the
+  #  reader chooses (and the one a visitor without JavaScript sees), so it must
+  #  be "classic" or "modern". Change it, save, reload.
+  # -------------------------------------------------------------------------
+  style = "classic"
+
+  author = "Alessio Amatu"
+  role = "Medical Oncologist"
+  affiliation = "Niguarda Cancer Center, Milan"
+  email = "alessio.amatu@ospedaleniguarda.it"
+  orcid = "0000-0001-5396-3378"
+  scopusId = "18436011800"
+  ogImage = "assets/og-cover.png"
+
+# ---- Markup -----------------------------------------------------------------
+[markup]
+  [markup.goldmark.renderer]
+    unsafe = true
+
+# ---- Guard rails ------------------------------------------------------------
+# Fail loudly on an outdated local Hugo rather than building something subtly
+# wrong. 0.158 is the floor: below it the `locale`/`label` language keys and the
+# hugo.Data / hugo.Sites globals used in layouts/ do not exist.
+[module]
+  [module.hugoVersion]
+    min = "0.158.0"
+
+# No taxonomies on this site: an empty table removes the default tags/categories.
+[taxonomies]

@@ -1,0 +1,110 @@
+- key: nocut
+  year: '2025'
+  authors: Amatu A, Palmeri L, Raimondi A, et al.
+  title: 'Total neoadjuvant therapy followed by non-operative management or surgery in stage II–III rectal cancer (NO-CUT): a multicentre, single-arm, phase 2 trial'
+  journal: The Lancet Oncology
+  ref: 2025;26(12):1612–1625
+  doi: 10.1016/S1470-2045(25)00542-X
+  author_badge: first
+  note: Primary results of the AIRC-funded NO-CUT trial; presented at the ESMO 2024 Presidential Symposium before publication.
+- key: divarasib
+  year: '2024'
+  authors: Desai J, Alonso G, Kim SH, … Amatu A, et al.
+  title: 'Divarasib plus cetuximab in KRAS G12C-positive colorectal cancer: a phase 1b trial'
+  journal: Nature Medicine
+  ref: 2024;30(1):271–278
+  pubmed: '38052910'
+  note: Phase 1b combination study of a KRAS G12C inhibitor with an anti-EGFR antibody, conducted in the Niguarda Phase I Unit.
+- key: patelli
+  year: '2023'
+  authors: Patelli G, Mauri G, Tosi F, … Amatu A, et al.
+  title: Circulating Tumor DNA to Drive Treatment in Metastatic Colorectal Cancer
+  journal: Clinical Cancer Research
+  ref: 2023;29(22):4530–4539
+  pubmed: '37436743'
+  note: Review of the interventional uses of ctDNA in metastatic colorectal cancer.
+- key: crisafulli
+  year: '2022'
+  authors: Crisafulli G, Sartore-Bianchi A, Lazzari L, … Amatu A, et al.
+  title: Temozolomide Treatment Alters Mismatch Repair and Boosts Mutational Burden in Tumor and Blood of Colorectal Cancer Patients
+  journal: Cancer Discovery
+  ref: 2022;12(7):1656–1675
+  pubmed: '35522273'
+  note: Translational follow-on from the temozolomide phase 2 programme run at Niguarda.
+- key: chronos
+  year: '2022'
+  authors: Sartore-Bianchi A, Pietrantonio F, Lonardi S, … Amatu A, et al.
+  title: 'Circulating tumor DNA to guide rechallenge with panitumumab in metastatic colorectal cancer: the phase 2 CHRONOS trial'
+  journal: Nature Medicine
+  ref: 2022;28(8):1612–1618
+  pubmed: '35915157'
+  note: 'Rechallenge guided prospectively by liquid biopsy: ctDNA used to select patients before treatment.'
+- key: tlr7
+  year: '2022'
+  authors: Janku F, Han SW, Doi T, Amatu A, et al.
+  title: Preclinical Characterization and Phase I Study of an Anti-HER2-TLR7 Immune-Stimulator Antibody Conjugate in Patients with HER2+ Malignancies
+  journal: Cancer Immunology Research
+  ref: 2022;10(12):1441–1461
+  pubmed: '36129967'
+  note: First-in-human study of an immune-stimulator antibody conjugate.
+- key: serocon
+  year: '2022'
+  authors: Amatu A, Pani A, Patelli G, et al.
+  title: Impaired seroconversion after SARS-CoV-2 mRNA vaccines in patients with solid tumours receiving anticancer treatment
+  journal: European Journal of Cancer
+  ref: 2022;163:16–25
+  pubmed: '35032813'
+  author_badge: first
+  note: Prospective study on vaccine response in patients on active anticancer treatment.
+- key: ntrk
+  year: '2019'
+  authors: Amatu A, Sartore-Bianchi A, Bencardino K, et al.
+  title: Tropomyosin receptor kinase (TRK) biology and the role of NTRK gene fusions in cancer
+  journal: Annals of Oncology
+  ref: 2019;30(Suppl_8):viii5–viii15
+  pubmed: '31738427'
+  author_badge: first
+  note: Invited review on TRK biology and tissue-agnostic NTRK-directed therapy.
+- key: her2
+  year: '2019'
+  authors: Sartore-Bianchi A*, Amatu A*, Porcu L, et al.
+  title: HER2 Positivity Predicts Unresponsiveness to EGFR-Targeted Treatment in Metastatic Colorectal Cancer
+  journal: The Oncologist
+  ref: 2019;24(10):1395–1402
+  author_badge: cofirst
+  note: HER2 as a negative predictive biomarker for anti-EGFR antibodies.
+- key: pooled
+  year: '2017'
+  authors: Sartore-Bianchi A, Amatu A, Bonazzina E, et al.
+  title: 'Pooled Analysis of Clinical Outcome of Patients with Chemorefractory Metastatic Colorectal Cancer Treated within Phase I/II Clinical Studies Based on Individual Biomarkers of Susceptibility: A Single-Institution Experience'
+  journal: Targeted Oncology
+  ref: 2017;12(4):525–533
+  pubmed: '28669023'
+  note: Single-institution analysis of biomarker-matched early-phase treatment at Niguarda.
+- key: mgmt16
+  year: '2016'
+  authors: Amatu A, Barault L, Moutinho C, et al.
+  title: Tumor MGMT promoter hypermethylation changes over time limit temozolomide efficacy in a phase II trial for metastatic colorectal cancer
+  journal: Annals of Oncology
+  ref: 2016;27(6):1062–1067
+  pubmed: '26916096'
+  author_badge: first
+  note: Single-centre phase 2 trial I designed and conducted at Niguarda, arising from the COLTHERES and MoTriColor international collaborations.
+- key: cadalk
+  year: '2015'
+  authors: Amatu A, Somaschini A, Cerea G, et al.
+  title: Novel CAD-ALK gene rearrangement is drugable by entrectinib in colorectal cancer
+  journal: British Journal of Cancer
+  ref: 2015;113(12):1730–1734
+  pubmed: '26633560'
+  author_badge: first
+  note: New CAD-ALK fusion in colon cancer, treated successfully within a first-in-human phase 1 trial.
+- key: mgmt13
+  year: '2013'
+  authors: Amatu A, Sartore-Bianchi A, Moutinho C, et al.
+  title: Promoter CpG island hypermethylation of the DNA repair enzyme MGMT predicts clinical response to dacarbazine in a phase II study for metastatic colorectal cancer
+  journal: Clinical Cancer Research
+  ref: 2013;19(8):2265–2272
+  pubmed: '23422094'
+  author_badge: first
+  note: Single-centre phase 2 trial I designed and conducted at Niguarda within the European COLTHERES project.

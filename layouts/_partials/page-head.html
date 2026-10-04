@@ -1,0 +1,8 @@
+{{- /* The band at the top of every inner page: eyebrow, H1, standfirst. */ -}}
+    <section class="page-head">
+      <div class="shell">
+        <p class="eyebrow">{{ .Params.eyebrow }}</p>
+        <h1 class="page-title">{{ .Params.heading | default .Title }}</h1>
+        {{ with .Params.subtitle }}<p class="page-sub">{{ . }}</p>{{ end }}
+      </div>
+    </section>

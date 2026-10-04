@@ -1,0 +1,237 @@
+# Interface strings. Page prose lives in content/, lists in data/.
+
+[aria_footerNav]
+other = "Navigazione a piè di pagina"
+
+[aria_lang]
+other = "Lingua"
+
+[aria_langEn]
+other = "Passa alla versione inglese del sito"
+
+[aria_langIt]
+other = "Passa alla versione italiana del sito"
+
+[aria_menu]
+other = "Apri o chiudi il menu di navigazione"
+
+[aria_nav]
+other = "Navigazione principale"
+
+[aria_social]
+other = "Profili accademici e professionali"
+
+[badge_cofirst]
+other = "Co-primo autore"
+
+[badge_first]
+other = "Primo autore"
+
+[badge_oa]
+other = "Open access"
+
+[brand_home]
+other = "Alessio Amatu — pagina iniziale"
+
+[doctype_article]
+other = "Articolo"
+
+[doctype_conferencepaper]
+other = "Atti di convegno"
+
+[doctype_editorial]
+other = "Editoriale"
+
+[doctype_erratum]
+other = "Erratum"
+
+[doctype_letter]
+other = "Lettera"
+
+[doctype_note]
+other = "Nota"
+
+[doctype_review]
+other = "Rassegna"
+
+[doctype_shortsurvey]
+other = "Nota breve"
+
+[footer_copy]
+other = "© {year} Alessio Amatu. Tutti i diritti riservati."
+
+[footer_note]
+other = "Sito professionale personale. Le opinioni qui espresse sono personali e non rappresentano la posizione del Grande Ospedale Metropolitano Niguarda."
+
+[footer_tagline]
+other = "Oncologo medico · Niguarda Cancer Center, Milano"
+
+[metric_cites]
+other = "Citazioni"
+
+[metric_docs]
+other = "Pubblicazioni"
+
+[metric_h]
+other = "Indice h"
+
+[nav_blog]
+other = "Novità"
+
+[nav_contact]
+other = "Contatti"
+
+[nav_cv]
+other = "CV"
+
+[nav_home]
+other = "Home"
+
+[nav_projects]
+other = "Studi e progetti"
+
+[nav_publications]
+other = "Pubblicazioni"
+
+[nav_research]
+other = "Ricerca"
+
+[nav_talks]
+other = "Interventi"
+
+[project_more]
+other = "Informazioni sul progetto"
+
+[project_role]
+other = "Ruolo"
+
+[pub_badges_label]
+other = "Dettagli dell’articolo"
+
+[pub_citation]
+other = "citazione"
+
+[pub_citations]
+other = "citazioni"
+
+[pub_link_doi]
+other = "DOI"
+
+[pub_link_pubmed]
+other = "PubMed"
+
+[pub_orcidBtn]
+other = "Profilo ORCID"
+
+[pub_scopusBtn]
+other = "Profilo Scopus"
+
+[pub_yearNav]
+other = "Vai all’anno"
+
+[skip_link]
+other = "Vai al contenuto principale"
+
+[social_email]
+other = "Email"
+
+[social_orcid]
+other = "ORCID"
+
+[social_scopus]
+other = "Scopus"
+
+[pub_entries_one]
+other = "1 pubblicazione"
+
+[pub_entries_many]
+other = "%d pubblicazioni"
+
+[lang_switch]
+other = "English"
+
+[lang_switch_aria]
+other = "Read this page in English"
+
+[post_back]
+other = "Torna alle novità"
+
+[aria_theme]
+other = "Tema chiaro o scuro"
+
+[theme_light]
+other = "Versione chiara"
+
+[theme_dark]
+other = "Versione scura"
+
+[post_read]
+other = "Leggi"
+
+# --- Controlled vocabularies for content/projects/ -------------------------
+# The value in the front matter, with "-" replaced by "_", is the key here.
+# Adding a value means adding it BOTH to this file and to the other language,
+# and to the list in layouts/_partials/vocabulary.html.
+
+[status_not_yet_recruiting]
+other = "Non ancora in arruolamento"
+
+[status_recruiting]
+other = "In arruolamento"
+
+[status_active_not_recruiting]
+other = "Attivo, non in arruolamento"
+
+[status_ongoing]
+other = "In corso"
+
+[status_suspended]
+other = "Sospeso"
+
+[status_completed]
+other = "Concluso"
+
+[status_terminated]
+other = "Interrotto anticipatamente"
+
+[phase_1]
+other = "Fase 1"
+
+[phase_1_2]
+other = "Fase 1/2"
+
+[phase_2]
+other = "Fase 2"
+
+[phase_2_3]
+other = "Fase 2/3"
+
+[phase_3]
+other = "Fase 3"
+
+[phase_observational]
+other = "Studio osservazionale"
+
+[phase_translational]
+other = "Programma traslazionale"
+
+[phase_eu_project]
+other = "Progetto di ricerca UE"
+
+[role_pi]
+other = "Sperimentatore principale"
+
+[role_co_pi]
+other = "Co-sperimentatore principale"
+
+[role_sub_investigator]
+other = "Sperimentatore associato"
+
+[role_collaborator]
+other = "Collaboratore"
+
+[role_coordinator]
+other = "Coordinatore"
+
+[og_image_alt]
+other = "Alessio Amatu, MD — Oncologo medico, Niguarda Cancer Center, Milano"

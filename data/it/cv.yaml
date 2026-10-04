@@ -1,0 +1,86 @@
+- key: current
+  heading: Incarichi attuali
+  items:
+  - key: mtb
+    when: 2023 – oggi
+    role: Responsabile del Molecular Tumor Board
+    org: Dipartimento di Oncologia ed Ematologia, Grande Ospedale Metropolitano Niguarda, Milano
+    note: Coordinamento e conduzione del Molecular Tumor Board della Divisione di Oncologia medica, articolazione della rete regionale.
+  - key: alta
+    when: 2022 – oggi
+    role: Alta Specializzazione per le Sperimentazioni Cliniche e l’Oncologia Molecolare
+    org: Grande Ospedale Metropolitano Niguarda, Milano
+    note: Conduzione e co-gestione clinica delle sperimentazioni, in particolare degli studi di fase 1 e 2 nell’ambito dell’oncologia clinica molecolare; ideazione, disegno, programmazione e realizzazione di studi clinici secondo le ICH-GCP.
+  - key: oncologist
+    when: 2011 – oggi
+    role: Dirigente medico, Oncologia medica
+    org: Dipartimento di Oncologia ed Ematologia, Grande Ospedale Metropolitano Niguarda, Milano
+    note: Attività di reparto e ambulatoriale, con particolare riferimento ai tumori del colon-retto e del tratto gastroenterico (pancreas, vie biliari, stomaco); ambulatorio multidisciplinare dei tumori del colon-retto e dell’ano.
+  - key: pi
+    when: 2011 – oggi
+    role: Sperimentatore principale e sperimentatore associato in studi clinici di fase 1/2/3
+    org: Unità di Fase I, Niguarda Cancer Center, Milano
+    note: Studi sponsorizzati di fase 2 e 3 e studi no-profit di fase 2 e pilota; studi di fase 1 condotti secondo la normativa AIFA 809/2015. Attività di fase 1 dal 2016.
+- key: previous
+  heading: Esperienze precedenti
+  items:
+  - key: maugeri
+    when: 2009–2010
+    role: Oncologo medico
+    org: Fondazione S. Maugeri, Pavia
+    note: Primo incarico dopo la specializzazione, prima del trasferimento a Niguarda.
+- key: education
+  heading: Formazione
+  items:
+  - key: master2
+    when: 2022–2023
+    role: Master di II livello in Biostatistica avanzata per la ricerca clinica
+    org: Università degli Studi di Padova
+  - key: master1
+    when: 2018–2019
+    role: Master di I livello in Biostatistica per la ricerca clinica e la pubblicazione scientifica
+    org: Università degli Studi di Padova
+  - key: flims
+    when: '2011'
+    role: 13° Workshop ECCO-AACR-EORTC-ESMO “Methods in Clinical Cancer Research”
+    org: Flims, Svizzera
+  - key: spec
+    when: 2005–2009
+    role: Specializzazione in Oncologia medica, con lode
+    org: Università degli Studi di Pavia
+  - key: iuss
+    when: '2006'
+    role: Diploma dell’Istituto Universitario di Studi Superiori (IUSS)
+    org: IUSS, Pavia
+  - key: md
+    when: '2005'
+    role: Laurea in Medicina e Chirurgia, con lode
+    org: Università degli Studi di Pavia
+  - key: gcp
+    when: '2025'
+    role: Formazione Good Clinical Practice, ICH E6 (R3)
+    org: Formazione GCP certificata per la ricerca clinica
+- key: memberships
+  heading: Società scientifiche e incarichi
+  items:
+  - key: aiom
+    when: Socio
+    role: AIOM — Associazione Italiana di Oncologia Medica
+    org: Associazione Italiana di Oncologia Medica
+  - key: esmo
+    when: Socio
+    role: ESMO — European Society for Medical Oncology
+    org: Società europea di oncologia medica
+  - key: fondazione
+    when: Comitato scientifico
+    role: Fondazione Oncologia Niguarda ONLUS
+    org: Membro del comitato scientifico della fondazione che sostiene la ricerca oncologica a favore dei pazienti curati a Niguarda
+  - key: teaching
+    when: Didattica e supervisione
+    role: Metodologia degli studi clinici e supervisione degli specializzandi in oncologia
+    org: Università degli Studi di Milano e Università degli Studi di Milano-Bicocca
+    note: Docenza di metodologia e disegno degli studi clinici nell’ambito di Master universitari; supervisione dell’attività clinica dei medici specializzandi in oncologia.
+  - key: course
+    when: 2018 – oggi
+    role: Direttore scientifico del corso residenziale di formazione sugli studi di fase 1
+    org: Dipartimento di Oncologia ed Ematologia, Niguarda Cancer Center, Milano

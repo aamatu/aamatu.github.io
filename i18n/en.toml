@@ -1,0 +1,237 @@
+# Interface strings. Page prose lives in content/, lists in data/.
+
+[aria_footerNav]
+other = "Footer navigation"
+
+[aria_lang]
+other = "Language"
+
+[aria_langEn]
+other = "Switch the site to English"
+
+[aria_langIt]
+other = "Switch the site to Italian"
+
+[aria_menu]
+other = "Open or close the navigation menu"
+
+[aria_nav]
+other = "Main navigation"
+
+[aria_social]
+other = "Academic and professional profiles"
+
+[badge_cofirst]
+other = "Co-first author"
+
+[badge_first]
+other = "First author"
+
+[badge_oa]
+other = "Open access"
+
+[brand_home]
+other = "Alessio Amatu — home page"
+
+[doctype_article]
+other = "Article"
+
+[doctype_conferencepaper]
+other = "Conference paper"
+
+[doctype_editorial]
+other = "Editorial"
+
+[doctype_erratum]
+other = "Erratum"
+
+[doctype_letter]
+other = "Letter"
+
+[doctype_note]
+other = "Note"
+
+[doctype_review]
+other = "Review"
+
+[doctype_shortsurvey]
+other = "Short survey"
+
+[footer_copy]
+other = "© {year} Alessio Amatu. All rights reserved."
+
+[footer_note]
+other = "Personal professional site. Opinions expressed here are my own and do not represent the position of Grande Ospedale Metropolitano Niguarda."
+
+[footer_tagline]
+other = "Medical Oncologist · Niguarda Cancer Center, Milan"
+
+[metric_cites]
+other = "Citations"
+
+[metric_docs]
+other = "Papers"
+
+[metric_h]
+other = "h-index"
+
+[nav_blog]
+other = "News"
+
+[nav_contact]
+other = "Contact"
+
+[nav_cv]
+other = "CV"
+
+[nav_home]
+other = "Home"
+
+[nav_projects]
+other = "Trials & Projects"
+
+[nav_publications]
+other = "Publications"
+
+[nav_research]
+other = "Research"
+
+[nav_talks]
+other = "Talks"
+
+[project_more]
+other = "Project information"
+
+[project_role]
+other = "Role"
+
+[pub_badges_label]
+other = "Article details"
+
+[pub_citation]
+other = "citation"
+
+[pub_citations]
+other = "citations"
+
+[pub_link_doi]
+other = "DOI"
+
+[pub_link_pubmed]
+other = "PubMed"
+
+[pub_orcidBtn]
+other = "ORCID profile"
+
+[pub_scopusBtn]
+other = "Scopus profile"
+
+[pub_yearNav]
+other = "Jump to year"
+
+[skip_link]
+other = "Skip to main content"
+
+[social_email]
+other = "Email"
+
+[social_orcid]
+other = "ORCID"
+
+[social_scopus]
+other = "Scopus"
+
+[pub_entries_one]
+other = "1 paper"
+
+[pub_entries_many]
+other = "%d papers"
+
+[lang_switch]
+other = "Italiano"
+
+[lang_switch_aria]
+other = "Leggi questa pagina in italiano"
+
+[post_back]
+other = "Back to news"
+
+[aria_theme]
+other = "Colour theme"
+
+[theme_light]
+other = "Light version"
+
+[theme_dark]
+other = "Dark version"
+
+[post_read]
+other = "Read"
+
+# --- Controlled vocabularies for content/projects/ -------------------------
+# The value in the front matter, with "-" replaced by "_", is the key here.
+# Adding a value means adding it BOTH to this file and to the other language,
+# and to the list in layouts/_partials/vocabulary.html.
+
+[status_not_yet_recruiting]
+other = "Not yet recruiting"
+
+[status_recruiting]
+other = "Recruiting"
+
+[status_active_not_recruiting]
+other = "Active, not recruiting"
+
+[status_ongoing]
+other = "Ongoing"
+
+[status_suspended]
+other = "Suspended"
+
+[status_completed]
+other = "Completed"
+
+[status_terminated]
+other = "Terminated early"
+
+[phase_1]
+other = "Phase 1"
+
+[phase_1_2]
+other = "Phase 1/2"
+
+[phase_2]
+other = "Phase 2"
+
+[phase_2_3]
+other = "Phase 2/3"
+
+[phase_3]
+other = "Phase 3"
+
+[phase_observational]
+other = "Observational study"
+
+[phase_translational]
+other = "Translational programme"
+
+[phase_eu_project]
+other = "EU research project"
+
+[role_pi]
+other = "Principal investigator"
+
+[role_co_pi]
+other = "Co-principal investigator"
+
+[role_sub_investigator]
+other = "Sub-investigator"
+
+[role_collaborator]
+other = "Collaborator"
+
+[role_coordinator]
+other = "Coordinator"
+
+[og_image_alt]
+other = "Alessio Amatu, MD — Medical Oncologist, Niguarda Cancer Center, Milan"

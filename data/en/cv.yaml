@@ -1,0 +1,86 @@
+- key: current
+  heading: Current positions
+  items:
+  - key: mtb
+    when: 2023 – present
+    role: Head of the Molecular Tumor Board
+    org: Department of Oncology and Haematology, Grande Ospedale Metropolitano Niguarda, Milan
+    note: Coordination and leadership of the Molecular Tumor Board of the Medical Oncology Division, part of the regional network.
+  - key: alta
+    when: 2022 – present
+    role: High Specialisation for Clinical Trials and Molecular Oncology
+    org: Grande Ospedale Metropolitano Niguarda, Milan
+    note: Leadership and clinical co-management of clinical trials, in particular phase 1 and 2 studies in molecular clinical oncology; design, planning and implementation of trials under ICH-GCP.
+  - key: oncologist
+    when: 2011 – present
+    role: Medical Oncologist
+    org: Department of Oncology and Haematology, Grande Ospedale Metropolitano Niguarda, Milan
+    note: Ward and outpatient activity, with a focus on colorectal and gastrointestinal cancers (pancreas, biliary tract, stomach); multidisciplinary colorectal and anal cancer clinic.
+  - key: pi
+    when: 2011 – present
+    role: Principal investigator / sub-investigator, phase 1/2/3 clinical trials
+    org: Phase I Unit, Niguarda Cancer Center, Milan
+    note: Sponsored phase 2 and 3 trials and non-profit phase 2 and pilot studies; phase 1 studies conducted under the Italian AIFA 809/2015 framework. Phase 1 work since 2016.
+- key: previous
+  heading: Previous positions
+  items:
+  - key: maugeri
+    when: 2009–2010
+    role: Medical Oncologist
+    org: Fondazione S. Maugeri, Pavia
+    note: First post after specialisation, before moving to Niguarda.
+- key: education
+  heading: Education & training
+  items:
+  - key: master2
+    when: 2022–2023
+    role: Master (2nd level) in Advanced Biostatistics for Clinical Research
+    org: Università degli Studi di Padova
+  - key: master1
+    when: 2018–2019
+    role: Master (1st level) in Biostatistics for Clinical Research and Scientific Publication
+    org: Università degli Studi di Padova
+  - key: flims
+    when: '2011'
+    role: 13th ECCO-AACR-EORTC-ESMO Workshop “Methods in Clinical Cancer Research”
+    org: Flims, Switzerland
+  - key: spec
+    when: 2005–2009
+    role: Postgraduate specialisation in Medical Oncology, with distinction
+    org: Università degli Studi di Pavia
+  - key: iuss
+    when: '2006'
+    role: Diploma of the Istituto Universitario di Studi Superiori (IUSS)
+    org: IUSS, Pavia
+  - key: md
+    when: '2005'
+    role: Degree in Medicine and Surgery (MD), with distinction
+    org: Università degli Studi di Pavia
+  - key: gcp
+    when: '2025'
+    role: Good Clinical Practice training, ICH E6 (R3)
+    org: Certified GCP training for clinical research
+- key: memberships
+  heading: Memberships & roles
+  items:
+  - key: aiom
+    when: Member
+    role: AIOM — Associazione Italiana di Oncologia Medica
+    org: Italian Association of Medical Oncology
+  - key: esmo
+    when: Member
+    role: ESMO — European Society for Medical Oncology
+    org: Member since specialisation
+  - key: fondazione
+    when: Scientific committee
+    role: Fondazione Oncologia Niguarda ONLUS
+    org: Member of the scientific committee of the foundation supporting cancer research for patients treated at Niguarda
+  - key: teaching
+    when: Teaching & supervision
+    role: Clinical trial methodology and supervision of oncology residents
+    org: Università degli Studi di Milano and Università degli Studi di Milano-Bicocca
+    note: Teaching of clinical trial methodology and design in postgraduate Master’s programmes; supervision of the clinical activity of oncology residents.
+  - key: course
+    when: 2018 – present
+    role: Scientific director, residential training course on phase 1 studies
+    org: Department of Oncology and Haematology, Niguarda Cancer Center, Milan

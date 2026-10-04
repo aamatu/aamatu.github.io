@@ -1,0 +1,36 @@
+- key: congress
+  heading: Interventi congressuali
+  items:
+  - key: esmo24
+    when: Settembre 2024
+    title: 'Terapia neoadiuvante totale senza chirurgia nel carcinoma del retto localmente avanzato: risultati principali dello studio NO-CUT'
+    event: Congresso ESMO 2024 — Simposio Presidenziale “Eyes to the Future”
+    place: Barcellona, Spagna
+    kind: Comunicazione orale
+  - key: congresses
+    when: 2009 – oggi
+    title: Relatore in congressi scientifici nazionali e internazionali di oncologia
+    event: Congressi di oncologia gastroenterica, oncologia di precisione e ricerca clinica di fase precoce
+    place: Italia ed estero
+    kind: Letture su invito e comunicazioni
+- key: teaching
+  heading: Didattica e docenze
+  items:
+  - key: phase1course
+    when: 2018 – oggi
+    title: Direttore scientifico del corso residenziale di formazione sugli studi di fase 1
+    event: Dipartimento di Oncologia ed Ematologia, Niguarda Cancer Center
+    place: Milano, Italia
+    kind: Direzione del corso
+  - key: bicocca
+    when: In corso
+    title: Metodologia e disegno degli studi clinici
+    event: Master universitari, Università degli Studi di Milano-Bicocca
+    place: Milano, Italia
+    kind: Docenza
+  - key: statale
+    when: In corso
+    title: Metodologia e disegno degli studi clinici; supervisione dei medici specializzandi in oncologia
+    event: Master universitari e Scuola di specializzazione in Oncologia, Università degli Studi di Milano
+    place: Milano, Italia
+    kind: Docenza e supervisione

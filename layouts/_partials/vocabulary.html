@@ -1,0 +1,44 @@
+{{- /*
+  vocabulary.html — the controlled vocabularies used by content/projects/.
+
+  This is the single place where the allowed values for `status`, `phase` and
+  `role` are defined. Adding a value means two edits, both here in the repo:
+
+     1. add it to the right list below;
+     2. add its label to i18n/en.toml AND i18n/it.toml, using the value with
+        every "-" turned into "_" (status: active-not-recruiting  ->
+        [status_active_not_recruiting]).
+
+  A value that is not on these lists stops the build with a message naming the
+  file, the offending value and the valid ones — you find out at `hugo server`,
+  not from a visitor.
+
+  `statusClass` maps each status onto one of the three visual families the
+  stylesheets already draw (recruiting = open, ongoing = running, completed =
+  closed), so new statuses need no CSS.
+*/ -}}
+{{- $statusClass := dict
+      "not-yet-recruiting"    "recruiting"
+      "recruiting"            "recruiting"
+      "active-not-recruiting" "ongoing"
+      "ongoing"               "ongoing"
+      "suspended"             "ongoing"
+      "completed"             "completed"
+      "terminated"            "completed"
+-}}
+{{- $statusList := slice
+      "not-yet-recruiting" "recruiting" "active-not-recruiting" "ongoing"
+      "suspended" "completed" "terminated"
+-}}
+{{- $phaseList := slice
+      "1" "1-2" "2" "2-3" "3" "observational" "translational" "eu-project"
+-}}
+{{- $roleList := slice
+      "pi" "co-pi" "sub-investigator" "collaborator" "coordinator"
+-}}
+{{- return dict
+      "statusClass" $statusClass
+      "status"      $statusList
+      "phase"       $phaseList
+      "role"        $roleList
+-}}

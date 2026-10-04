@@ -1,0 +1,30 @@
+{{ define "main" }}
+{{ partial "page-head.html" . }}
+
+    <section class="section">
+      <div class="shell">
+        {{/* One numbered block per file in content/research/, ordered by weight. */}}
+        {{ range $i, $topic := .RegularPagesRecursive.ByWeight }}
+        <article class="topic">
+          <p class="topic-num" aria-hidden="true">{{ printf "%02d" (add $i 1) }}</p>
+          <div class="topic-body">
+            <h2 class="topic-title">{{ $topic.Title }}</h2>
+            {{ $topic.Content }}
+          </div>
+        </article>
+        {{ end }}
+      </div>
+    </section>
+
+    <section class="section section--tint section--ruled">
+      <div class="shell">
+        {{ with .Params.quote }}
+        <blockquote class="pullquote">
+          <p>{{ .text }}</p>
+          <footer>{{ .attribution }}</footer>
+        </blockquote>
+        {{ end }}
+        {{ with .Params.closing }}<p class="lede muted">{{ . }}</p>{{ end }}
+      </div>
+    </section>
+{{ end }}

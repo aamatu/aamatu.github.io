@@ -1,0 +1,11 @@
+{{- /*
+  Renders a Markdown body while keeping the original design's paragraph class.
+
+  The old site emitted <p class="lede">…</p> by hand. Markdown gives us plain
+  <p>, so we re-attach the class to every top-level paragraph. Everything else
+  in the body (links, emphasis, lists) passes through untouched.
+
+  Usage:  {{ partial "prose.html" (dict "content" .Content "class" "lede") }}
+*/ -}}
+{{- $class := .class -}}
+{{- .content | replaceRE `<p>` (printf `<p class="%s">` $class) | safeHTML -}}

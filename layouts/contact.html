@@ -1,0 +1,41 @@
+{{ define "main" }}
+{{ partial "page-head.html" . }}
+
+    <section class="section">
+      <div class="shell contact-grid">
+        <div>
+          <p class="eyebrow">{{ .Params.details.title }}</p>
+          <dl class="def-list">
+            <dt>{{ .Params.details.email_label }}</dt>
+            <dd>{{ partial "mail-link.html" (dict "Site" .Site "plain" true) }}</dd>
+            <dt>{{ .Params.details.address_label }}</dt>
+            <dd style="white-space:pre-line">{{ .Params.details.address }}</dd>
+            <dt>{{ .Params.details.correspondence_label }}</dt>
+            <dd class="small muted">{{ .Params.details.correspondence | markdownify }}</dd>
+          </dl>
+        </div>
+
+        <div>
+          <p class="eyebrow">{{ .Params.affiliation.title }}</p>
+          <div class="affiliation">
+            <p style="white-space:pre-line">{{ .Params.affiliation.body }}</p>
+            <p class="small muted" style="margin-top:1rem">{{ .Params.affiliation.note }}</p>
+          </div>
+        </div>
+
+        <div>
+          <p class="eyebrow">{{ .Params.profiles_title }}</p>
+          <ul class="profile-list">
+            {{ range hugo.Data.profiles }}
+            <li><a class="profile-link" href="{{ .url }}" rel="noopener" target="_blank">
+              {{ partial "icon-letters.html" .letters }}
+              <span>{{ i18n (printf "social_%s" .key) }}</span>
+              <span class="profile-handle">{{ .handle }}</span>
+            </a></li>
+            {{ end }}
+            <li>{{ partial "mail-link.html" (dict "Site" .Site "class" "profile-link" "icon" true "label" true "handle" true) }}</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+{{ end }}

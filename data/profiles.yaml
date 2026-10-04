@@ -1,0 +1,10 @@
+- key: orcid
+  label: ORCID
+  letters: iD
+  handle: 0000-0001-5396-3378
+  url: https://orcid.org/0000-0001-5396-3378
+- key: scopus
+  label: Scopus
+  letters: SC
+  handle: Author ID 18436011800
+  url: https://www.scopus.com/authid/detail.uri?authorId=18436011800

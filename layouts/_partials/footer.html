@@ -1,0 +1,23 @@
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <div>
+        <p class="footer-brand">{{ .Site.Params.author }}, MD</p>
+        <p class="footer-note">{{ i18n "footer_tagline" }}</p>
+        <p class="footer-copy">{{ replace (i18n "footer_copy") "{year}" (now.Year | string) }}</p>
+      </div>
+
+      <div>
+        <ul class="social-list" aria-label="{{ i18n "aria_social" }}">
+          <li><a class="social-link" href="https://orcid.org/{{ .Site.Params.orcid }}" rel="noopener me" target="_blank" aria-label="{{ i18n "social_orcid" }}" title="{{ i18n "social_orcid" }}">{{ partial "icon-letters.html" "iD" }}</a></li>
+          <li><a class="social-link" href="https://www.scopus.com/authid/detail.uri?authorId={{ .Site.Params.scopusId }}" rel="noopener me" target="_blank" aria-label="{{ i18n "social_scopus" }}" title="{{ i18n "social_scopus" }}">{{ partial "icon-letters.html" "SC" }}</a></li>
+          <li>{{ partial "mail-link.html" (dict "Site" .Site "class" "social-link" "icon" true "aria" true) }}</li>
+        </ul>
+        <ul class="footer-nav" aria-label="{{ i18n "aria_footerNav" }}">
+        {{ range .Site.Menus.main }}
+          <li><a href="{{ .URL }}">{{ .Name }}</a></li>
+        {{ end }}
+        </ul>
+        <p class="footer-copy">{{ i18n "footer_note" }}</p>
+      </div>
+    </div>
+  </footer>

@@ -1,0 +1,64 @@
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="{{ "" | relLangURL }}" aria-label="{{ i18n "brand_home" }}">
+        <span class="brand-mono" aria-hidden="true">AA</span>
+        <span class="brand-name">{{ .Site.Params.author }}</span>
+      </a>
+
+      <div class="header-right">
+        <nav class="site-nav" id="site-nav" aria-label="{{ i18n "aria_nav" }}">
+          <ul class="nav-list">
+          {{ $current := . }}
+          {{ range .Site.Menus.main }}
+            {{ $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) }}
+            <li><a class="nav-link" href="{{ .URL }}"{{ if $active }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+          {{ end }}
+          </ul>
+        </nav>
+
+        {{/* One control per language. The current one is inert; the other is a
+             real link to the translation of *this* page, so switching language
+             never throws the reader back to the home page. */}}
+        <div class="lang-toggle" role="group" aria-label="{{ i18n "aria_lang" }}">
+          {{ $page := . }}
+          {{ range hugo.Sites }}
+            {{ if eq .Language.Lang $page.Language.Lang }}
+              <span class="lang-btn" aria-pressed="true" aria-current="true">{{ upper .Language.Lang }}</span>
+            {{ else }}
+              {{ $lang := .Language.Lang }}
+              {{ $target := "" }}
+              {{ range $page.Translations }}
+                {{ if eq .Language.Lang $lang }}{{ $target = .RelPermalink }}{{ end }}
+              {{ end }}
+              {{ if not $target }}{{ $target = (relLangURL "" | replaceRE "^/[a-z]{2}/" "/") }}{{ end }}
+              <a class="lang-btn" aria-pressed="false" href="{{ $target }}" hreflang="{{ .Language.Locale }}"
+                 aria-label="{{ i18n "lang_switch_aria" }}">{{ upper .Language.Lang }}</a>
+            {{ end }}
+          {{ end }}
+        </div>
+
+        {{/* Light (classic) / dark (modern) switch. The choice is stored in
+             localStorage and applied before paint by the inline script in
+             head.html, so the page never flashes the wrong stylesheet. Only
+             shown when the configured default is one of the two, and kept to a
+             single compact button so the header never runs out of room. */}}
+        {{ $style := .Site.Params.style | default "classic" }}
+        {{ if or (eq $style "classic") (eq $style "modern") }}
+        {{ $dark := eq $style "modern" }}
+        <button type="button" class="theme-btn theme-toggle" data-theme-toggle
+                aria-pressed="{{ if $dark }}true{{ else }}false{{ end }}"
+                data-to-light="{{ i18n "theme_light" }}" data-to-dark="{{ i18n "theme_dark" }}"
+                aria-label="{{ if $dark }}{{ i18n "theme_light" }}{{ else }}{{ i18n "theme_dark" }}{{ end }}"
+                title="{{ if $dark }}{{ i18n "theme_light" }}{{ else }}{{ i18n "theme_dark" }}{{ end }}">
+          <svg class="theme-icon theme-icon--sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.1M12 19.3v2.1M2.6 12h2.1M19.3 12h2.1M5.4 5.4l1.5 1.5M17.1 17.1l1.5 1.5M18.6 5.4l-1.5 1.5M6.9 17.1l-1.5 1.5"/></svg>
+          <svg class="theme-icon theme-icon--moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13.6A8 8 0 1 1 10.4 4a6.6 6.6 0 0 0 9.6 9.6Z"/></svg>
+        </button>
+        {{ end }}
+
+        <button type="button" class="nav-toggle" aria-expanded="false" aria-controls="site-nav"
+                aria-label="{{ i18n "aria_menu" }}">
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>

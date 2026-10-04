@@ -1,0 +1,23 @@
+{{/*
+  Renders an obfuscated mailto link: the address ships base64-encoded and
+  is assembled into a real mailto: href by JS on load. Bots scraping raw
+  HTML for "user@host" patterns get nothing; the <noscript> fallback gives
+  a human without JS a munged, non-clickable version they can retype.
+
+  Params (dict):
+    class  - extra class(es) on the <a> (optional)
+    icon   - true to render the mail icon before the label (optional)
+    label  - true to show the "Email" i18n label as a span (optional)
+    handle - true to show the address itself in a span.profile-handle
+             (filled in by JS; optional)
+    plain  - true to show the address itself as the sole link content,
+             no label/handle wrapper (used where the link IS the address)
+    aria   - true to set aria-label/title from social_email (optional)
+*/}}
+{{ $email := .Site.Params.email }}
+{{ $b64 := $email | base64Encode }}
+{{ $user := index (split $email "@") 0 }}
+{{ $domain := index (split $email "@") 1 }}
+{{ $munged := printf "%s (at) %s" $user (replace $domain "." " (dot) ") }}
+<a class="js-mail{{ with .class }} {{ . }}{{ end }}" data-mail="{{ $b64 }}" tabindex="0" role="link"
+  {{ if .aria }} aria-label="{{ i18n "social_email" }}" title="{{ i18n "social_email" }}"{{ end }}>{{ if .icon }}{{ partial "icon-mail.html" }}{{ end }}{{ if .plain }}<span class="js-mail-text">{{ i18n "social_email" }}</span>{{ end }}{{ if .label }}<span>{{ i18n "social_email" }}</span>{{ end }}{{ if .handle }}<span class="profile-handle js-mail-text">{{ i18n "social_email" }}</span>{{ end }}</a><noscript>{{ $munged }}</noscript>

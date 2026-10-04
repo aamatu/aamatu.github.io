@@ -1,0 +1,36 @@
+- key: congress
+  heading: Congress presentations
+  items:
+  - key: esmo24
+    when: September 2024
+    title: 'Total neoadjuvant treatment without surgery for locally advanced rectal cancer: primary results of the NO-CUT trial'
+    event: ESMO Congress 2024 — Presidential Symposium “Eyes to the Future”
+    place: Barcelona, Spain
+    kind: Oral presentation
+  - key: congresses
+    when: 2009 – present
+    title: Speaker at national and international oncology congresses
+    event: Meetings on gastrointestinal oncology, precision oncology and early-phase clinical research
+    place: Italy and abroad
+    kind: Invited lectures and communications
+- key: teaching
+  heading: Teaching & invited lectures
+  items:
+  - key: phase1course
+    when: 2018 – present
+    title: Scientific director, residential training course on phase 1 studies
+    event: Department of Oncology and Haematology, Niguarda Cancer Center
+    place: Milan, Italy
+    kind: Course direction
+  - key: bicocca
+    when: Ongoing
+    title: Clinical trial methodology and design
+    event: Postgraduate Master’s programmes, Università degli Studi di Milano-Bicocca
+    place: Milan, Italy
+    kind: Teaching
+  - key: statale
+    when: Ongoing
+    title: Clinical trial methodology and design; supervision of oncology residents
+    event: Postgraduate Master’s programmes and Oncology residency, Università degli Studi di Milano
+    place: Milan, Italy
+    kind: Teaching and supervision

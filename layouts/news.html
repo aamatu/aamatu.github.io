@@ -1,0 +1,24 @@
+{{ define "main" }}
+{{ partial "page-head.html" . }}
+
+    <section class="section">
+      <div class="shell">
+        {{/* Each entry is one file in content/news/. Ordered by `weight`
+             (1 = newest, at the top). The body of the file is the excerpt. */}}
+        <ul class="post-list">
+          {{ range .RegularPagesRecursive.ByWeight }}
+          {{ $linkText := .Params.link_text }}
+          {{ $linkURL := .Params.link_url }}
+          <li class="post">
+            <time class="post-date">{{ .Params.display_date }}</time>
+            <h2 class="post-title">{{ .Title }}</h2>
+            {{ partial "prose.html" (dict "content" .Content "class" "post-excerpt") }}
+            {{ if $linkText }}
+            <p style="margin-top:.65rem"><a class="link-arrow" href="{{ $linkURL | relLangURL }}">{{ $linkText }}</a></p>
+            {{ end }}
+          </li>
+          {{ end }}
+        </ul>
+      </div>
+    </section>
+{{ end }}

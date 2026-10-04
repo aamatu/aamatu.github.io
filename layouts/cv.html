@@ -1,0 +1,41 @@
+{{ define "main" }}
+{{ partial "page-head.html" . }}
+
+    <section class="section section--tight">
+      <div class="shell">
+        <div class="cv-download">
+          <div>
+            <h2 style="margin:0 0 .3rem;font-size:1.25rem">{{ .Params.records.title }}</h2>
+            <p>{{ .Params.records.note }}</p>
+          </div>
+          <div class="profile-actions">
+            <a class="btn" href="https://orcid.org/{{ .Site.Params.orcid }}" rel="noopener" target="_blank">{{ partial "icon-external.html" }}<span>{{ i18n "pub_orcidBtn" }}</span></a>
+            <a class="btn btn--ghost" href="https://www.scopus.com/authid/detail.uri?authorId={{ .Site.Params.scopusId }}" rel="noopener" target="_blank">{{ partial "icon-external.html" }}<span>{{ i18n "pub_scopusBtn" }}</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        {{/* Sections and entries come from data/<lang>/cv.yaml */}}
+        {{ range index hugo.Data .Site.Language.Lang "cv" }}
+        <section class="cv-section">
+          <h2>{{ .heading }}</h2>
+          <ul class="cv-list">
+            {{ range .items }}
+            <li class="cv-item">
+              <p class="cv-when">{{ .when }}</p>
+              <div>
+                <h3 class="cv-role">{{ .role }}</h3>
+                <p class="cv-org">{{ .org }}</p>
+                {{ with .note }}<p class="cv-note">{{ . }}</p>{{ end }}
+              </div>
+            </li>
+            {{ end }}
+          </ul>
+        </section>
+        {{ end }}
+      </div>
+    </section>
+{{ end }}

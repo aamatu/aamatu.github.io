@@ -1,0 +1,46 @@
+{{ define "main" }}
+{{ partial "page-head.html" . }}
+
+{{/* The allowed values for status / phase / role are defined in one place:
+     layouts/_partials/vocabulary.html. Anything outside those lists stops the
+     build with a message that names the file and lists what is accepted. */}}
+{{ $vocab := partialCached "vocabulary.html" . }}
+
+    <section class="section">
+      <div class="shell">
+        {{/* One card per file in content/projects/, ordered by weight. */}}
+        <div class="trial-grid">
+        {{ range .RegularPagesRecursive.ByWeight }}
+          {{ $page := . }}
+          {{ $status := printf "%v" (.Params.status | default "") }}
+          {{ $statusLabel := partial "validated-label.html" (dict "page" $page "field" "status" "value" $status "allowed" $vocab.status) }}
+          {{ $phaseLabel  := partial "validated-label.html" (dict "page" $page "field" "phase"  "value" .Params.phase "allowed" $vocab.phase) }}
+          {{ $roleLabel   := partial "validated-label.html" (dict "page" $page "field" "role"   "value" .Params.role  "allowed" $vocab.role) }}
+          {{/* Seven statuses, three visual families — new statuses need no CSS. */}}
+          {{ $cls := index $vocab.statusClass $status | default "ongoing" }}
+
+        <article class="trial-card">
+          <div class="trial-top">
+            <span class="phase-badge">{{ $phaseLabel }}</span>
+            <span class="status status--{{ $cls }}">
+              <span class="status-dot" aria-hidden="true"></span>
+              <span>{{ $statusLabel }}</span>
+            </span>
+          </div>
+          <h2 class="trial-title">{{ .Title }}</h2>
+          <p class="trial-period">{{ .Params.period }}</p>
+          {{ partial "prose.html" (dict "content" .Content "class" "trial-desc") }}
+          <p class="trial-foot">
+            {{ with .Params.code }}<span class="nct">{{ . }}</span>{{ end }}
+            <span><span>{{ i18n "project_role" }}</span>: <span>{{ $roleLabel }}</span></span>
+          </p>
+          {{ with .Params.project_url }}
+          <p class="trial-more"><a class="link-arrow" href="{{ . }}" rel="noopener" target="_blank">{{ i18n "project_more" }}</a></p>
+          {{ end }}
+        </article>
+        {{ end }}
+        </div>
+        {{ with .Params.note }}<p class="small muted" style="margin-top:2rem;max-width:64ch">{{ . }}</p>{{ end }}
+      </div>
+    </section>
+{{ end }}

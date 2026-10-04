@@ -1,0 +1,81 @@
+{{ define "main" }}
+    <!-- HERO ------------------------------------------------------------ -->
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <h1 class="hero-name">{{ .Params.hero.name }}</h1>
+          <p class="hero-role">{{ .Params.hero.role }}</p>
+          <p class="hero-intro">{{ .Params.hero.intro }}</p>
+          <p class="hero-greeting">{{ .Params.hero.greeting }}</p>
+        </div>
+
+        <figure class="portrait">
+          <div class="portrait-frame">
+            {{ with .Params.hero.portrait }}
+            <img src="{{ . | relURL }}" alt="{{ $.Params.hero.portrait_caption }}">
+            {{ else }}
+            <span class="portrait-mono" aria-hidden="true">AA</span>
+            {{ end }}
+          </div>
+          <figcaption>{{ .Params.hero.portrait_caption }}</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="section section--tight">
+      <div class="shell">
+        <h2 class="eyebrow">{{ .Params.interests_heading }}</h2>
+        <ul class="tag-list">
+          {{ range .Params.interests }}<li><span class="tag">{{ . }}</span></li>
+          {{ end }}
+        </ul>
+      </div>
+    </section>
+
+
+    <section class="section section--tint section--ruled">
+      <div class="shell">
+        <h2 class="eyebrow">{{ .Params.latest_heading }}</h2>
+        <div class="card-grid">
+        {{ range .Params.latest }}
+        <article class="card">
+          <p class="card-kicker">{{ .kicker }}</p>
+          <h3 class="card-title">{{ .title }}</h3>
+          <p class="card-meta">{{ .meta }}</p>
+          <p class="card-foot"><a class="link-arrow" href="{{ .url | relLangURL }}">{{ .link }}</a></p>
+        </article>
+        {{ end }}
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <p class="eyebrow">{{ .Params.bio.eyebrow }}</p>
+        <h2>{{ .Params.bio.title }}</h2>
+        {{/* Each paragraph of the Markdown body becomes a .lede paragraph. */}}
+        {{ partial "prose.html" (dict "content" .Content "class" "lede") }}
+        <p style="margin-top:1.8rem"><a class="btn btn--ghost" href="{{ .Params.bio.cta_url | relLangURL }}">{{ .Params.bio.cta }}</a></p>
+      </div>
+    </section>
+    <!-- Sits last: the site addresses colleagues first. Patients and
+         relatives are a secondary audience, pointed to a page of their own. -->
+    {{ with .Params.patients }}
+    <section class="section section--tight">
+      <div class="shell">
+        <aside class="patient-callout" aria-label="{{ .aria }}">
+          <div>
+            <p class="eyebrow">{{ .eyebrow }}</p>
+            <h2>{{ .title }}</h2>
+            <p>{{ .body }}</p>
+            <p class="callout-note">{{ .note }}</p>
+          </div>
+          <div class="callout-action">
+            <a class="btn btn--warm" href="{{ .cta_url | relLangURL }}">{{ .cta }}</a>
+            <a class="link-arrow" href="{{ .link_url | relLangURL }}">{{ .link }}</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+    {{ end }}
+{{ end }}

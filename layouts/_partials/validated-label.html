@@ -1,0 +1,29 @@
+{{- /*
+  validated-label.html — turn one front-matter value into its printed label,
+  and stop the build with a useful message when it cannot.
+
+  Two things can go wrong, and each gets its own message:
+    • the value is not in the allowed list  -> shows the allowed values
+    • the value is allowed but untranslated -> names the key to add, in both files
+
+  Called as:
+    {{ partial "validated-label.html" (dict
+         "page" $page "field" "status" "value" $status "allowed" $vocab.status) }}
+*/ -}}
+{{- $page := .page -}}
+{{- $field := .field -}}
+{{- $value := printf "%v" (.value | default "") -}}
+{{- $key := printf "%s_%s" $field (replace $value "-" "_") -}}
+{{- $label := "" -}}
+
+{{- if not (in .allowed $value) -}}
+  {{- errorf "%s\n  %s: %q is not a valid value.\n  Valid values: %s\n  (the list lives in layouts/_partials/vocabulary.html)"
+        $page.File.Path $field $value (delimit .allowed ", ") -}}
+{{- else -}}
+  {{- $label = i18n $key -}}
+  {{- if not $label -}}
+    {{- errorf "%s\n  %s: %q is allowed but has no label yet.\n  Add a [%s] entry to BOTH i18n/en.toml and i18n/it.toml."
+          $page.File.Path $field $value $key -}}
+  {{- end -}}
+{{- end -}}
+{{- return $label -}}
